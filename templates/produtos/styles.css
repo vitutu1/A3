@@ -24,49 +24,42 @@ button {
 button:hover {
     background-color: #45a049;
 }
-a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    margin: 20px auto;
-    padding: 10px 15px;
-    border: 2px solid #3498db;
-    border-radius: 5px;
-    text-align: center;
-}
 
-a:hover {
-    text-decoration: underline;
-    background-color: #3498db;
-    color: white;
-}
-
-#results {
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
     max-width: 900px;
     margin: 0 auto;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
+.product-item {
     background-color: #fff;
-    margin: 10px 0;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Alinhar o conteúdo ao centro */
 }
 
-/* Adicionando estilo para o link dentro da lista */
-ul li a {
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-item a {
     color: #3498db;
     text-decoration: none;
     font-weight: bold;
+    display: block;
 }
 
-ul li a:hover {
+.product-item a:hover {
     text-decoration: underline;
 }
