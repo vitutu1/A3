@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const resultList = document.createElement('ul');
                 data.forEach(item => {
                     const listItem = document.createElement('li');
-                    listItem.textContent = `Nome: ${item.first_name} ${item.last_name}, Endereço: ${item.address}, Telefone: ${item.cell_phone}`;
+                    listItem.textContent = `Nome: ${item.first_name} ${item.last_name}, Endereço: ${item.address}, Telefone: ${item.cell_phone}, Email: ${item.email}, Genênero: ${item.gender}`;
                     resultList.appendChild(listItem);
                 });
 
