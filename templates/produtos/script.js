@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description.textContent = item.description;
 
             const link = document.createElement('a');
-            link.href = '#'; // Substitua pelo link ou caminho real
+            link.href = '#'; 
             link.textContent = item.name;
 
             productItem.appendChild(img);
