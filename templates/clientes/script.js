@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 data.forEach(item => {
                     const listItem = document.createElement('li');
 
-                    // Criando a caixa com informações do cliente e botões de copiar, editar e excluir
+                    
                     const clientContainer = document.createElement('div');
                     clientContainer.classList.add('client-container');
 
                     const clientInfo = document.createElement('div');
                     clientInfo.classList.add('client-info');
 
-                    // Adicione as informações que deseja exibir
+                    
                     clientInfo.innerHTML = `
                         <p><strong>Nome:</strong> ${item.first_name} ${item.last_name}</p>
                         <p><strong>Email:</strong> ${item.email}</p>
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     deleteButton.classList.add('delete-button');
                     deleteButton.textContent = 'Excluir';
                     deleteButton.addEventListener('click', function () {
-                        // Adiciona uma confirmação antes de excluir
+                        
                         const shouldDelete = confirm('Tem certeza que deseja excluir este cliente?');
                         if (shouldDelete) {
                             deleteClient(item.id);
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error(`Erro na requisição: ${response.status}`);
             }
             console.log('Cliente excluído com sucesso!');
-            fetchData(); // Atualiza a lista após a exclusão
+            fetchData(); 
         })
         .catch(error => {
             console.error('Erro na requisição de exclusão:', error);
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function openEditModal(client) {
-        // Crie e exiba um modal com um formulário preenchido com os dados do cliente
+        
         const modal = document.createElement('div');
         modal.classList.add('edit-modal');
     
@@ -136,9 +136,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 gender: form.elements['gender'].value,
             };
     
-            // Adicione a lógica para salvar as alterações do cliente aqui
+            
             saveClientChanges(updatedClient);
-            modal.remove(); // Feche o modal após salvar
+            modal.remove(); 
         });
     
         const nameLabel = document.createElement('label');
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nameInput.type = 'text';
         nameInput.value = `${client.first_name} ${client.last_name}`;
         nameInput.required = true;
-        nameInput.name = 'first_name'; // Alteração aqui para capturar o primeiro nome
+        nameInput.name = 'first_name'; 
     
         const emailLabel = document.createElement('label');
         emailLabel.textContent = 'Email:';
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         phoneInput.type = 'tel';
         phoneInput.value = client.cell_phone;
         phoneInput.required = true;
-        phoneInput.name = 'phone'; // Alteração aqui para capturar o telefone
+        phoneInput.name = 'phone'; 
     
         const addressLabel = document.createElement('label');
         addressLabel.textContent = 'Endereço:';
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const genderOptions = ['Masculino', 'Feminino', 'Outro'];
         genderOptions.forEach(option => {
             const optionElement = document.createElement('option');
-            optionElement.value = option.charAt(0); // Usar a primeira letra como valor
+            optionElement.value = option.charAt(0); 
             optionElement.textContent = option;
             if (client.gender && client.gender.toUpperCase() === option.charAt(0)) {
                 optionElement.selected = true;
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cancelButton.type = 'button';
         cancelButton.textContent = 'Cancelar';
         cancelButton.addEventListener('click', function () {
-            modal.remove(); // Feche o modal ao clicar em "Cancelar"
+            modal.remove(); 
         });
     
         form.appendChild(nameLabel);
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error(`Erro na requisição: ${response.status}`);
             }
             console.log('Cliente atualizado com sucesso!');
-            fetchData(); // Atualiza a lista após a atualização
+            fetchData(); 
         })
         .catch(error => {
             console.error('Erro na requisição de atualização:', error);
