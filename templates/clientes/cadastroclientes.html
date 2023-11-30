@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="../css/styless.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Clientes</h1>
+        <a href="../home/home.html" id="logo-link">
+            <img src="../A3LOGO.png" alt="Logo" id="logo">
+    </header>
+
+    <nav>
+        <a href="../produtos/produtos.html">Produtos</a>
+        <a href="../produtos/cadastroprodutos.html">Cadastro de Produtos</a>
+        <a href="../clientes/clientes.html">Clientes</a>
+        <a href="../clientes/cadastroclientes.html">Cadastro de Clientes</a>
+    </nav>
+
+    <section>
+        <h2>Cadastro de Cliente</h2>
+
+        <form id="clientForm">
+            <label for="firstName">Nome:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Sobrenome:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="cellPhone">Telefone:</label>
+            <input type="tel" id="cellPhone" name="cellPhone" required>
+
+            <label for="address">Endereço:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="gender">Gênero:</label>
+            <select id="gender" name="gender">
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+                <option value="O">Outro</option>
+            </select>
+
+            <button type="button" onclick="submitForm()">Cadastrar</button>
+        </form>
+
+        <div id="responseMessage"></div>
+
+        <script src="cadastroC.js"></script>
+    </section>
+</body>
+</html>

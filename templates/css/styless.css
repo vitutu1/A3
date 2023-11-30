@@ -12,6 +12,18 @@ header {
     text-align: center;
 }
 
+#logo-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#logo {
+    width: 200px; /* ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+
 nav {
     display: flex;
     justify-content: center;
@@ -199,4 +211,53 @@ ul {
 
 .product-item a:hover {
     text-decoration: underline;
+}
+
+/*... Cadastro Clientes ... */
+
+
+
+#clientForm {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgba(12, 1, 1, 0); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#clientForm label {
+    display: block;
+    margin-bottom: 8px;
+    color: #3498db;
+}
+
+#clientForm input,
+#clientForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#clientForm button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#clientForm button:hover {
+    background-color: #2980b9;
+}
+
+#responseMessage {
+    margin-top: 20px;
+    color: #2ecc71; /* Cor verde para mensagens de sucesso */
 }
