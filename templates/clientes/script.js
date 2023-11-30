@@ -128,10 +128,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
             const updatedClient = {
                 id: client.id,
-                first_name: form.elements['first_name'].value,
-                last_name: form.elements['last_name'].value,
+                first_name: form.elements['first_name'].value.split(' ')[0],
+                last_name: form.elements['first_name'].value.split(' ')[1],
                 email: form.elements['email'].value,
-                cell_phone: form.elements['cell_phone'].value,
+                cell_phone: form.elements['phone'].value,
                 address: form.elements['address'].value,
                 gender: form.elements['gender'].value,
             };
@@ -140,35 +140,39 @@ document.addEventListener('DOMContentLoaded', function () {
             saveClientChanges(updatedClient);
             modal.remove(); // Feche o modal após salvar
         });
-
+    
         const nameLabel = document.createElement('label');
         nameLabel.textContent = 'Nome:';
         const nameInput = document.createElement('input');
         nameInput.type = 'text';
         nameInput.value = `${client.first_name} ${client.last_name}`;
         nameInput.required = true;
-
+        nameInput.name = 'first_name'; // Alteração aqui para capturar o primeiro nome
+    
         const emailLabel = document.createElement('label');
         emailLabel.textContent = 'Email:';
         const emailInput = document.createElement('input');
         emailInput.type = 'email';
         emailInput.value = client.email;
         emailInput.required = true;
-
+        emailInput.name = 'email';
+    
         const phoneLabel = document.createElement('label');
         phoneLabel.textContent = 'Telefone:';
         const phoneInput = document.createElement('input');
         phoneInput.type = 'tel';
         phoneInput.value = client.cell_phone;
         phoneInput.required = true;
-
+        phoneInput.name = 'phone'; // Alteração aqui para capturar o telefone
+    
         const addressLabel = document.createElement('label');
         addressLabel.textContent = 'Endereço:';
         const addressInput = document.createElement('input');
         addressInput.type = 'text';
         addressInput.value = client.address;
         addressInput.required = true;
-
+        addressInput.name = 'address';
+    
         const genderLabel = document.createElement('label');
         genderLabel.textContent = 'Gênero:';
         const genderInput = document.createElement('select');
@@ -182,7 +186,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             genderInput.appendChild(optionElement);
         });
-
+        genderInput.name = 'gender';
+    
         const saveButton = document.createElement('button');
         saveButton.type = 'submit';
         saveButton.textContent = 'Salvar';
@@ -206,12 +211,11 @@ document.addEventListener('DOMContentLoaded', function () {
         form.appendChild(genderInput);
         form.appendChild(saveButton);
         form.appendChild(cancelButton);
-
+    
         modal.appendChild(form);
-
+    
         document.body.appendChild(modal);
     }
-
     function saveClientChanges(updatedClient) {
         const updateUrl = `http://127.0.0.1:8000/clientes/clientes/${updatedClient.id}/`;
 
