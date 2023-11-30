@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* ... clientes ... */
+
+
+/* ... Outros estilos ... */
+
+
+
+
+.client-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.client-container {
+    flex-basis: calc(20% - 10px); /* Para ter três colunas lado a lado, com margens entre elas */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+.client-name {
+    font-weight: bold;
+    color: #e3e6e9;
+    font-size: 18px;
+    margin-right: 10px;
+    background-color: #00000011;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.copy-button {
+    background-color: #01142052;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background-color: #2980b9;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para os botões de Editar e Excluir */
+.actions-menu button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.actions-menu button:hover {
+    background-color: #2980b9;
+}
+
+.actions-menu button.delete-button {
+    background-color: #e74c3c;
+}
+
+.actions-menu button.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilos para os botões no modal de edição */
+.edit-modal form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.edit-modal label {
+    display: block;
+    margin-bottom: 8px;
+    color: #3498db;
+}
+
+.edit-modal input,
+.edit-modal select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-modal button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.edit-modal button:hover {
+    background-color: #2980b9;
+}
+
+.edit-modal button.cancel-button {
+    background-color: #e74c3c;
+    margin-right: 0;
+}
+
+.edit-modal button.cancel-button:hover {
+    background-color: #c0392b;
+}
+
+
+
+
+
+
+/* ... produtos ... */
+
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.product-item {
+    background-color: #00000011; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-item a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.product-item a:hover {
+    text-decoration: underline;
+}
