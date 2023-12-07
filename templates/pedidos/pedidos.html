@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="../css/styless.css">
+</head>
+<body>
+    <header>
+        <h1>Pedidos</h1>
+        <a href="../home/home.html" id="logo-link">
+            <img src="../A3LOGO.png" alt="Logo" id="logo">
+        </a>
+    </header>
+
+    <nav>
+        <a href="../produtos/produtos.html">Produtos</a>
+        <a href="../produtos/cadastroprodutos.html">Cadastro de Produtos</a>
+        <a href="../clientes/clientes.html">Clientes</a>
+        <a href="../clientes/cadastroclientes.html">Cadastro de Clientes</a>
+        <a href="../pedidos/pedidos.html">Pedidos</a>
+    </nav>
+
+    <section>
+        <h2>Novo Pedido</h2>
+
+        
+        <form id="orderForm">
+            <label for="clientSelect">Cliente:</label>
+            <select id="clientSelect" name="clientSelect" required></select>
+
+            <label for="productSelect">Produto:</label>
+            <select id="productSelect" name="productSelect" required></select>
+
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+            <label for="unitaryPrice">Preço Unitário:</label>
+            <input type="number" id="unitaryPrice" name="unitaryPrice" step="0.01" min="0" value="0" required>
+
+            <button type="button" onclick="window.addOrderItem()">Adicionar Item</button>
+
+        </form>
+
+        <h2>Resumo do Pedido</h2>
+
+        
+        <ul id="orderItemList"></ul>
+
+        
+        <p>Total do Pedido: R$ <span id="totalPrice">0.00</span></p>
+
+        <button type="button" onclick="submitOrder()">Finalizar Pedido</button>
+
+
+        <div id="orderResponseMessage"></div>
+    </section>
+
+    <script src="pedidos.js"></script>
+</body>
+</html>
