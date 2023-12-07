@@ -20,13 +20,16 @@
         <a href="../clientes/clientes.html">Clientes</a>
         <a href="../clientes/cadastroclientes.html">Cadastro de Clientes</a>
         <a href="../pedidos/pedidos.html">Pedidos</a>
+        <a href="../pedidos/pedidos_lista.html">Listagem de Pedidos</a>
     </nav>
 
     <section>
         <h2>Novo Pedido</h2>
 
-        
         <form id="orderForm">
+            <label for="clientSearch">Pesquisar Cliente:</label>
+            <input type="text" id="clientSearch" oninput="searchClients()" placeholder="Digite o nome do cliente">
+
             <label for="clientSelect">Cliente:</label>
             <select id="clientSelect" name="clientSelect" required></select>
 
@@ -40,19 +43,15 @@
             <input type="number" id="unitaryPrice" name="unitaryPrice" step="0.01" min="0" value="0" required>
 
             <button type="button" onclick="window.addOrderItem()">Adicionar Item</button>
-
         </form>
 
         <h2>Resumo do Pedido</h2>
 
-        
         <ul id="orderItemList"></ul>
 
-        
         <p>Total do Pedido: R$ <span id="totalPrice">0.00</span></p>
 
         <button type="button" onclick="submitOrder()">Finalizar Pedido</button>
-
 
         <div id="orderResponseMessage"></div>
     </section>

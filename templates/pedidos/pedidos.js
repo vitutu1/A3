@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     
-    let clients = [];
     let products = [];
     let orderItems = [];
 
-    
     function fillSelectOptions(selectId, data, valueField, textField) {
         const select = document.getElementById(selectId);
         select.innerHTML = '';
@@ -17,21 +15,40 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    
+   
     function loadClients() {
         fetch('http://127.0.0.1:8000/clientes/clientes/')
             .then(response => response.json())
             .then(data => {
                 clients = data.map(client => {
-                    
+                   e
                     client.fullName = `${client.first_name} ${client.last_name}`;
                     return client;
                 });
+
+                
+                clients.reverse();
+
                 
                 fillSelectOptions('clientSelect', clients, 'id', 'fullName');
             })
             .catch(error => console.error('Erro ao carregar clientes:', error));
     }
+
+    
+    function searchClients() {
+        const searchInput = document.getElementById('clientSearch').value.toLowerCase();
+
+        const filteredClients = clients.filter(client =>
+            client.fullName.toLowerCase().includes(searchInput)
+        );
+
+        
+        fillSelectOptions('clientSelect', filteredClients, 'id', 'fullName');
+    }
+
+    
+    document.getElementById('clientSearch').addEventListener('input', searchClients);
 
    
     function loadProducts() {
